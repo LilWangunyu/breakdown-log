@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataShoe Breakdown Log</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 DataShoe Machine Breakdown Log</h1>
+
+        <!-- Subscription Section -->
+        <div class="auth-section">
+            <h2>Subscribe to KPI Reports</h2>
+            <input type="email" id="subscriberEmail" placeholder="Your Email *">
+            <input type="password" id="adminPassword" placeholder="Subscription Password *">
+            <button onclick="subscribeWithPassword()">Subscribe</button>
+            <p id="authStatus"></p>
+        </div>
+
+        <!-- Data Entry Form -->
+        <div class="form">
+            <input type="date" id="date" required>
+            <input type="text" id="technician" placeholder="Technician Name *" required>
+            <input type="text" id="machine" placeholder="Machine Name *" required>
+            <select id="factory" required>
+                <option value="">Select Factory *</option>
+                <option value="Sandak">Sandak</option>
+                <option value="Tannery">Tannery</option>
+                <option value="Leather">Leather</option>
+                <option value="DIP/canvas">DIP/canvas</option>
+                <option value="Thongs">Thongs</option>
+                <option value="Paletizing">Paletizing</option>
+                <option value="Kingsteel">Kingsteel</option>
+            </select>
+            <input type="text" id="natureOfBreakdown" placeholder="Nature of Breakdown *" required>
+            <input type="text" id="time" placeholder="Repair Time (e.g., 2h 30m)">
+            <input type="text" id="sparePart" placeholder="Spare Part Used">
+            <button onclick="submitBreakdown()">Submit Report</button>
+        </div>
+
+        <!-- Search & Data Display -->
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Search by machine, date, etc...">
+            <button onclick="searchReports()">🔍 Search</button>
+        </div>
+        <div id="dataDisplay"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f8f9fa;
+    color: #212529;
+    margin: 0;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Form Elements */
+.form, .auth-section, .search {
+    margin: 2rem 0;
+    display: grid;
+    gap: 1.2rem;
+}
+
+input, select, button {
+    padding: 1rem;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background: #dc3545;
+    margin-top: 1rem;
+}
+
+.delete-btn:hover {
+    background: #bb2d3b;
+}
+
+/* Data Display */
+#dataDisplay {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.entry {
+    background: #fff;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.entry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    input, select, button {
+        width: 100%;
+    }
+}
+
+#authStatus {
+    color: #28a745;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    text-align: center;
+}
